@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a problem with Tesla Stock Watch
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Do not include real tokens, passwords, cookies, private hostnames, public IPs, screenshots with private data, or full `.env` files.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the issue and what you expected instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Runtime
+      options:
+        - Docker / Proxmox
+        - Docker / other Linux host
+        - Local Node.js
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: main, release tag, or commit SHA
+  - type: textarea
+    id: health
+    attributes:
+      label: Relevant health output
+      description: Paste only relevant `/api/health` fields. Remove emails, tokens, private hosts, IPs, and cookies.
+      render: json
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste a short sanitized snippet only.
+      render: text

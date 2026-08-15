@@ -1,0 +1,63 @@
+{
+  "name": "tesla-stock-watch",
+  "version": "1.0.0",
+  "description": "Self-hosted Tesla inventory monitor, stock watcher, and alert dashboard for Australia",
+  "keywords": [
+    "tesla",
+    "tesla-inventory",
+    "tesla-inventory-australia",
+    "tesla-stock",
+    "tesla-stock-watch",
+    "tesla-alerts",
+    "model-y",
+    "model-y-inventory",
+    "model-y-stock",
+    "inventory-monitor",
+    "availability-tracker",
+    "stock-monitor",
+    "stock-alerts",
+    "vehicle-inventory",
+    "self-hosted",
+    "australia",
+    "nodejs",
+    "express",
+    "react",
+    "puppeteer",
+    "docker",
+    "docker-compose",
+    "pushover",
+    "gmail"
+  ],
+  "license": "MIT",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wisie/tesla-stock-watch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wisie/tesla-stock-watch/issues"
+  },
+  "homepage": "https://github.com/wisie/tesla-stock-watch#readme",
+  "scripts": {
+    "build": "node scripts/build-ui.js",
+    "check": "node --check server.js && node --check scraper.js && node --check scraper-fallback.js && node --check scraper-dom.js && node --check scraper-shop.js && node --check telegram-ingest.js && node --check scripts/build-ui.js && node --check scripts/react-shim.js && node --check scripts/ui-entry.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.1.0",
+    "express": "^4.22.2",
+    "nodemailer": "^9.0.5",
+    "puppeteer-core": "^25.1.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
